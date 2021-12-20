@@ -29,13 +29,13 @@ public class Main {
 					if(rs.next()) {
 						System.out.format("%3s %44s %29s %19s%n" , "ID" , "COUNTRY" , "REGION" , "CONTINENT");
 						
-						while(rs.next()) {
-							System.out.format("%3d",rs.getInt(1));
-							System.out.format("%45s",rs.getString(2));
-							System.out.format("%30s", rs.getString(3));
-							System.out.format("%20s%n", rs.getString(4));
-							
-						}
+							do {
+								System.out.format("%3d", rs.getInt(1));
+								System.out.format("%45s", rs.getString(2));
+								System.out.format("%30s", rs.getString(3));
+								System.out.format("%20s%n", rs.getString(4));
+							} while (rs.next());
+								
 					}else {
 						throw new Exception("No results");
 					}
